@@ -1,0 +1,6 @@
+teclado
+relógio
+garrafa
+mesa
+cadeira
+camisa
