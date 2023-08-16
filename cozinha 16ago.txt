@@ -5,3 +5,5 @@ prato
 esponja
 pia
 detergente
+concha
+copo
