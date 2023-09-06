@@ -7,6 +7,8 @@ import Picture from "./components/Picture";
 import ShowUserData from "./components/ShowUserData";
 import ShowUserData2 from "./components/ShowUserData2";
 import ShowUserData3 from "./components/ShowUserData3";
+import ContainerComponent from "./components/ContainerComponent";
+import DoSomething from "./components/DoSomething";
 
 function App() {
   const userAge = 22;
@@ -20,6 +22,24 @@ function App() {
     { id: 3, registration: 2021734393, name: "Fernandinha", age: 20 },
     { id: 4, registration: 2020999935, name: "Laura", age: 22 },
   ]);
+
+  const writeMessage = () => {
+    const currentDate = new Date();
+
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    };
+
+    const currentDateTime = currentDate.toLocaleString("pt-br", options);
+
+    console.log("Novo clique do botão em: " + currentDateTime);
+  };
 
   return (
     <div className="Imagens">
@@ -65,6 +85,23 @@ function App() {
           registration={student.registration}
         />
       ))}
+      <ContainerComponent number={25}>
+        <p>Conteúdo extra do meu componente contêiner.</p>
+        <p>1 + 1 = 3</p>
+      </ContainerComponent>
+      <ContainerComponent number={12}>
+        <p>Blá blá blá.</p>
+        <p>1 + 2 = 3</p>
+      </ContainerComponent>
+      <ContainerComponent number={7}>
+        <p>Nhenhenhém.</p>
+        <p>1 + 3 = 3</p>
+      </ContainerComponent>
+      <ContainerComponent number={3}>
+        <p>Mimimi.</p>
+        <p>3 + 6 = 3</p>
+      </ContainerComponent>
+      <DoSomething myCommand={writeMessage} />
     </div>
   );
 }
